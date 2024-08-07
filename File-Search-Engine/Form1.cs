@@ -16,5 +16,34 @@ namespace File_Search_Engine
         {
             InitializeComponent();
         }
+
+        private void btnBrowseFolders_Click(object sender, EventArgs e)
+        {
+            if (fldBwsrDlgBrowse.ShowDialog() == DialogResult.OK)
+            {
+                txtBxFolderPath.Text = fldBwsrDlgBrowse.SelectedPath;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DirectorySearchResult.UpdateFolderPath(txtBxFolderPath.Text);
+            if (string.IsNullOrWhiteSpace(txtBxFolderPath.Text))
+            {
+                MessageBox.Show("Please select file path.", "File path cannot be null or empty.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            DirectorySearchResult.searchFolder();
+            UpdateListBox();
+        }
+
+        private void UpdateListBox()
+        {
+            foreach (var item in DirectorySearchResult.GetFiles())
+            {
+                lstBxFiles.Items.Add( item);
+            }
+        }
+
     }
 }

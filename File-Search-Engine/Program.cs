@@ -17,6 +17,9 @@ namespace File_Search_Engine
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            //DirectorySearchResult CurrentDirectory = new DirectorySearchResult();
+            //CurrentDirectory.searchFolder("C:/Users/aawon/Documents/School");
         }
     }
 }
