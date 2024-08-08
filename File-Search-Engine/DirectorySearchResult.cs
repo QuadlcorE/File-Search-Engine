@@ -1,15 +1,12 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace File_Search_Engine
 {
     static class DirectorySearchResult
     {
-        private static List<string> Files;
+        private static List<Document> Files = new List<Document>();
 
         private static string FolderPath;
 
@@ -24,15 +21,21 @@ namespace File_Search_Engine
         {
             if (Directory.Exists(FolderPath))
             {
-                Files = Directory.GetFiles(FolderPath, "*.*", SearchOption.AllDirectories)
-                                          .Where(file => allowedExtensions.Contains(Path.GetExtension(file).ToLower()))
-                                          .ToList();
+                List<string> newFiles = Directory.GetFiles(FolderPath, "*.*", SearchOption.AllDirectories)
+                                            .Where(file => allowedExtensions.Contains(Path.GetExtension(file).ToLower()))
+                                            .ToList();
+
+                foreach (var file in newFiles)
+                {
+                    Document newDoc = new Document(file);
+                    Files.Add(newDoc);
+                }
             }
         }
 
         public static List<string> GetFiles()
         {
-            return Files.Select(file => Path.GetFileName(file)).ToList();
+            return Files.Select( file => file.GetFileName()).ToList();
         }
 
     }
