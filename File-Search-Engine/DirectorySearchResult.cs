@@ -12,6 +12,8 @@ namespace File_Search_Engine
 
         private static List<string> allowedExtensions = new List<string> { ".pdf", ".doc", ".docx", ".ppt", ".ppts", ".xls", ".xlsx", ".txt", ".html", ".xm" };
 
+        public static int CalledTokenizeDocument = 0; // TODO: Remove this line of code
+
         public static void UpdateFolderPath(string folderPath)
         {
             FolderPath = folderPath;
@@ -28,7 +30,12 @@ namespace File_Search_Engine
                 foreach (var file in newFiles)
                 {
                     Document newDoc = new Document(file);
-                    Files.Add(newDoc);
+                    if (!Files.Any(curfile => curfile.GetFullFileAndPathName() == newDoc.GetFullFileAndPathName()))
+                    {
+                        Files.Add(newDoc);
+                        Tokenizer.TokenizeDocument(newDoc);
+                        CalledTokenizeDocument += 1; // TODO: Remove this line of code
+                    }
                 }
             }
         }

@@ -7,6 +7,7 @@ namespace File_Search_Engine
     {
         public static string ReadDocument(Document document)
         {
+            // TODO: Add cases for other file extensions along with their corresponding methods.
             switch (document.GetFileExtension().ToLower())
             {
                 case ".pdf":

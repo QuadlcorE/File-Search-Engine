@@ -39,11 +39,17 @@ namespace File_Search_Engine
 
         private void UpdateListBox()
         {
+            lstBxFiles.Items.Clear();
             foreach (var item in DirectorySearchResult.GetFiles())
             {
                 lstBxFiles.Items.Add( item);
             }
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Tokenizer.TokenData.Tables["TokenTable"];
+            txtBxDocumentCount.Text = $"TokenTableCount {Tokenizer.TokenTable.Rows.Count}  Documents Tokenized {DirectorySearchResult.CalledTokenizeDocument}  NumberOfTimesDo {Tokenizer.NumberOfTimesADocument}"; // TODO: Remove this line of code
+        }
     }
 }

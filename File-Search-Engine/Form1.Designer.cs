@@ -35,6 +35,10 @@ namespace File_Search_Engine
             this.lblFolderSelector = new System.Windows.Forms.Label();
             this.txtBxFolderPath = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtBxDocumentCount = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstBxFiles
@@ -81,11 +85,39 @@ namespace File_Search_Engine
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(591, 15);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(180, 23);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "Print Data";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(591, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(639, 277);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // txtBxDocumentCount
+            // 
+            this.txtBxDocumentCount.Location = new System.Drawing.Point(792, 17);
+            this.txtBxDocumentCount.Name = "txtBxDocumentCount";
+            this.txtBxDocumentCount.Size = new System.Drawing.Size(340, 20);
+            this.txtBxDocumentCount.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 541);
+            this.ClientSize = new System.Drawing.Size(1269, 541);
+            this.Controls.Add(this.txtBxDocumentCount);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtBxFolderPath);
             this.Controls.Add(this.lblFolderSelector);
@@ -93,6 +125,7 @@ namespace File_Search_Engine
             this.Controls.Add(this.lstBxFiles);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +139,9 @@ namespace File_Search_Engine
         private System.Windows.Forms.Label lblFolderSelector;
         private System.Windows.Forms.TextBox txtBxFolderPath;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtBxDocumentCount;
     }
 }
 
