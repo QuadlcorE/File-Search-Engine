@@ -36,6 +36,9 @@ namespace File_Search_Engine
             this.lstBxFiles = new System.Windows.Forms.ListBox();
             this.btnTableUpdater = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtBxSearchQuery = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lstBxSearchResults = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +79,7 @@ namespace File_Search_Engine
             // 
             // btnTableUpdater
             // 
-            this.btnTableUpdater.Location = new System.Drawing.Point(544, 25);
+            this.btnTableUpdater.Location = new System.Drawing.Point(385, 25);
             this.btnTableUpdater.Name = "btnTableUpdater";
             this.btnTableUpdater.Size = new System.Drawing.Size(171, 23);
             this.btnTableUpdater.TabIndex = 4;
@@ -87,16 +90,44 @@ namespace File_Search_Engine
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(544, 83);
+            this.dataGridView1.Location = new System.Drawing.Point(385, 83);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(516, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(330, 355);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // txtBxSearchQuery
+            // 
+            this.txtBxSearchQuery.Location = new System.Drawing.Point(729, 27);
+            this.txtBxSearchQuery.Name = "txtBxSearchQuery";
+            this.txtBxSearchQuery.Size = new System.Drawing.Size(210, 20);
+            this.txtBxSearchQuery.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(945, 24);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(99, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lstBxSearchResults
+            // 
+            this.lstBxSearchResults.FormattingEnabled = true;
+            this.lstBxSearchResults.Location = new System.Drawing.Point(729, 83);
+            this.lstBxSearchResults.Name = "lstBxSearchResults";
+            this.lstBxSearchResults.Size = new System.Drawing.Size(315, 355);
+            this.lstBxSearchResults.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1122, 525);
+            this.Controls.Add(this.lstBxSearchResults);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtBxSearchQuery);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTableUpdater);
             this.Controls.Add(this.lstBxFiles);
@@ -120,6 +151,9 @@ namespace File_Search_Engine
         private System.Windows.Forms.ListBox lstBxFiles;
         private System.Windows.Forms.Button btnTableUpdater;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtBxSearchQuery;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListBox lstBxSearchResults;
     }
 }
 

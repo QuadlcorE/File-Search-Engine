@@ -50,5 +50,21 @@ namespace File_Search_Engine
         {
             dataGridView1.DataSource = Tokenizer.TokenData.Tables["TokenTable"];
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchEngine.SearchQuery = txtBxSearchQuery.Text;
+            SearchEngine.SearchTokens();
+            UpdateSearchList();
+        }
+
+        private void UpdateSearchList()
+        {
+            lstBxSearchResults.Items.Clear();
+            foreach(var item in SearchEngine.SearchResults)
+            {
+                lstBxSearchResults.Items.Add(item.FullFileAndPathName);
+            }
+        }
     }
 }

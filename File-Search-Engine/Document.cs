@@ -3,7 +3,7 @@
     public struct Document
     {
         public string FullFileAndPathName;
-        public string WordCount;
+        public int WordCount;
         public string DocumentContent;
     }
 }
